@@ -2,6 +2,7 @@ var mqtt = require('mqtt')
 var client = mqtt.connect({ port: 1883, host: 'localhost'})
 
 function publish () {
+  console.log('message published.')
   client.publish('test', JSON.stringify({data: 'testing'}), { qos: 1, retain: true })
 }
 
